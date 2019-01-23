@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">BakingApp</string>
+
+    <string name="recipe_name">recipe_name</string>
+    <string name="description_list_fragment">description_list_fragment</string>
+    <string name="instruction_fragment">instruction_fragment</string>
+
+    <string name="ingredients_text">Ingredients:</string>
+
+    <string name="dessert_header">Dessert:</string>
+    <string name="dessert_name">Dessert Name</string>
+    <string name="servings_header">Servings:</string>
+    <string name="servings_example">8</string>
+    <string name="recipe_intent_key">recipe</string>
+
+    <string name="ingredients_header">Ingredients you will need for today\'s dessert</string>
+    <string name="ingredients_intro_content_description">ingredients intro</string>
+
+    <string name="ingredients_list_example">2 CUP Graham Cracker crumbs \n6 TBLSP unsalted butter,
+        melted  \n0.5 CUP granulates sugar\n1.5 TSP Salt  \n5 TBLSP vanilla  \n1 K Nutella or other
+        chocolate-hazelnut spread \n500 G Mascapone Cheese(room temperature)  \n1
+        CUP heavy cream(cold) \n4 OZ cream cheese(softened)</string>
+
+    <string name="video_not_available">No video is available for this step. Good luck!</string>
+
+    <string name="recipe_description_example">2. Whisk the graham cracker crumbs, 50 grams (1/4 cup)
+        of sugar, and 1/2 teaspoon of salt together in a medium bowl.Pour the melted butter and 1
+        teaspoon of vanilla into the dry ingredients and stir together until evenly mixed.</string>
+
+    <string name="previous_step">Previous</string>
+    <string name="next_step">Next</string>
+    <string name="position">position</string>
+    <string name="play_position">play_position</string>
+    <string name="play_state">play_state</string>
+    <string name="recipe_title_in_widget">Recipe title in widget</string>
+    <string name="recipe_ingredients_in_widget">recipe ingredients in widget</string>
+    <string name="recipe_title_example_widget">Nutella Pie</string>
+    <string name="widget_ingredients_default_text">Please view a recipe to see its ingredients here :D</string>
+
+
+</resources>

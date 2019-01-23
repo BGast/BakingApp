@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_view_spacing">8sp</dimen>
+    <dimen name="recipe_relative_padding">8sp</dimen>
+    <dimen name="recipe_header_spacing">8dp</dimen>
+    <dimen name="ingredients_list_horizontal_margin">16dp</dimen>
+
+    <dimen name="widget_margin">0dp</dimen>
+    <dimen name="video_tablet_land">500dp</dimen>
+    <dimen name="video_size_standard">250dp</dimen>
+</resources>
