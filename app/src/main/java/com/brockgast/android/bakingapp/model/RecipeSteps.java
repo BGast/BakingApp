@@ -4,11 +4,19 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class RecipeSteps implements Parcelable {
 
+    @Expose
     private final int id;
+    @Expose
     private final String shortDescription;
+    @Expose
     private final String description;
+    @SerializedName("videoURL")
+    @Expose
     private final String videoUrl;
 
     public RecipeSteps(int id, String shortDescription, String description, String videoUrl) {
@@ -18,7 +26,7 @@ public class RecipeSteps implements Parcelable {
         this.videoUrl = videoUrl;
     }
 
-    RecipeSteps(Parcel in) {
+    private RecipeSteps(Parcel in) {
         id = in.readInt();
         shortDescription = in.readString();
         description = in.readString();

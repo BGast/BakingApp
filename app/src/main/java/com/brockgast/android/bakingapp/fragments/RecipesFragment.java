@@ -2,7 +2,6 @@ package com.brockgast.android.bakingapp.fragments;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,14 +16,18 @@ import android.view.ViewGroup;
 import com.brockgast.android.bakingapp.R;
 import com.brockgast.android.bakingapp.adapters.RecipeAdapter;
 import com.brockgast.android.bakingapp.model.Recipe;
-import com.brockgast.android.bakingapp.utils.JsonUtils;
-import com.brockgast.android.bakingapp.utils.NetworkUtils;
+import com.brockgast.android.bakingapp.utils.RecipeJsonApi;
 
-import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RecipesFragment extends Fragment {
 
@@ -54,8 +57,7 @@ public class RecipesFragment extends Fragment {
         RecyclerView.LayoutManager mRecipeManager = new LinearLayoutManager(getContext());
         mRecipeRecyclerView.setLayoutManager(mRecipeManager);
 
-        URL recipeUrl = NetworkUtils.urlBuilder();
-        new FetchRecipe().execute(recipeUrl);
+        getRecipe();
 
         return view;
     }
@@ -74,51 +76,47 @@ public class RecipesFragment extends Fragment {
             @Override
             public void onChanged(@Nullable ArrayList<Recipe> recipes) {
                 if (mRecipeArrayList.size() == 0) {
-                    URL recipeUrl = NetworkUtils.urlBuilder();
-                    new FetchRecipe().execute(recipeUrl);
+                    getRecipe();
                 } else {
                     mRecipeArrayList.size();
-                    URL recipeUrl = NetworkUtils.urlBuilder();
-                    new FetchRecipe().execute(recipeUrl);
+                    getRecipe();
                 }
             }
         });
 
     }
 
-    class FetchRecipe extends AsyncTask<URL, Void, String> {
+    public void getRecipe() {
 
-        @Override
-        protected String doInBackground(URL... urls) {
-            URL searchUrl = urls[0];
-            String recipeResponse;
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://d17h27t6h515a5.cloudfront.net/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
-            try {
-                recipeResponse = NetworkUtils.getResponseFromHttpUrl(searchUrl); // Gets recipe URL
-            } catch (Exception e) {
-                e.printStackTrace();
-                return null;
-            }
-            return recipeResponse;
-        }
+        RecipeJsonApi recipeJsonApi = retrofit.create(RecipeJsonApi.class);
 
-        @Override
-        protected void onPostExecute(String recipeResponse) {
-            new FetchRecipe().cancel(true);
-            if (recipeResponse != null && !recipeResponse.equals("")) {
+        Call<List<Recipe>> call = recipeJsonApi.getRecipes();
 
-                try {
-                    mRecipeArrayList = JsonUtils.extractRecipes(recipeResponse); // Passes URL for JSON data extraction into models
-                } catch (Exception e) {
-                    e.printStackTrace();
+        call.enqueue(new Callback<List<Recipe>>() {
+            @Override
+            public void onResponse(Call<List<Recipe>> call, Response<List<Recipe>> response) {
+                if (!response.isSuccessful()) {
+                    return;
                 }
+
+                ArrayList<Recipe> mRecipeList = (ArrayList<Recipe>) response.body();
+                Log.d(TAG, "onResponse: " + mRecipeList);
+
                 RecyclerView.Adapter mRecipeAdapter = new RecipeAdapter(getContext(),
-                        mRecipeArrayList); // Passes new recipe information to fill activity_main
+                        mRecipeList); // Passes new recipe information to fill activity_main
                 mRecipeRecyclerView.setAdapter(mRecipeAdapter);
-            } else {
-                Log.e(TAG, "onPostExecute: Problems with adapter");
             }
-        }
+
+            @Override
+            public void onFailure(Call<List<Recipe>> call, Throwable t) {
+
+            }
+        });
     }
 }
 

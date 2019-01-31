@@ -4,10 +4,15 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
+import com.google.gson.annotations.Expose;
+
 public class Ingredients implements Parcelable {
 
+    @Expose
     private final double quantity;
+    @Expose
     private final String measure;
+    @Expose
     private final String ingredient;
 
     public Ingredients(double quantity, String measure, String ingredient) {
@@ -16,7 +21,7 @@ public class Ingredients implements Parcelable {
         this.ingredient = ingredient;
     }
 
-    Ingredients(Parcel in) {
+    private Ingredients(Parcel in) {
         quantity = in.readDouble();
         measure = in.readString();
         ingredient = in.readString();

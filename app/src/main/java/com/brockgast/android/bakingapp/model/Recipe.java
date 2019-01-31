@@ -4,14 +4,24 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 public class Recipe implements Parcelable {
 
+    @Expose
     private final int id;
+    @Expose
     private final String name;
+    @Expose
     private final int servings;
+    @SerializedName("ingredients")
+    @Expose
     private final ArrayList<Ingredients> ingredientsList;
+    @SerializedName("steps")
+    @Expose
     private final ArrayList<RecipeSteps> recipeSteps;
 
     public Recipe(int id, String name, int servings, ArrayList<Ingredients> ingredientsList, ArrayList<RecipeSteps> recipeSteps) {

@@ -8,7 +8,6 @@ import com.brockgast.android.bakingapp.fragments.RecipesFragment;
 public class MainActivity extends AppCompatActivity {
 
     /**
-     *
      * @param savedInstanceState of type Bundle
      */
     @Override
