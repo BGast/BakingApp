@@ -28,7 +28,9 @@ dependencies {
     implementation 'android.arch.lifecycle:extensions:1.1.1'
 
     // Butter Knife
+    //noinspection GradleDependency
     implementation 'com.jakewharton:butterknife:8.8.1'
+    //noinspection GradleDependency
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     // ExoPlayer

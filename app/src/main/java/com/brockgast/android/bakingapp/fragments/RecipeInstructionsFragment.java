@@ -46,8 +46,8 @@ public class RecipeInstructionsFragment extends Fragment {
     private int mCurrentPosition;
     private long mLastPlayerPosition = 0;
     private Boolean mLastPlayerState = false;
-    long lastPlayPosition;
-    Boolean lastPlayState;
+    private long lastPlayPosition;
+    private Boolean lastPlayState;
     @SuppressWarnings("WeakerAccess")
     @BindView(R.id.exoplayer)
     PlayerView mPlayer;
