@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#00BCD4"
     android:layout_marginStart="@dimen/card_view_spacing"
     android:layout_marginTop="@dimen/card_view_spacing"
     android:layout_marginEnd="@dimen/card_view_spacing">
@@ -14,38 +16,30 @@
 
         <TextView
             android:id="@+id/dessert_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dessert_header"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+            style="@style/MainActivityTextViews"
+            android:text="@string/dessert_header" />
 
         <TextView
             android:id="@+id/dessert_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/MainActivityTextViews"
             android:layout_marginStart="@dimen/recipe_header_spacing"
             android:layout_toEndOf="@id/dessert_header"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
             tools:text="@string/dessert_name" />
 
         <TextView
             android:id="@+id/dessert_servings_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/MainActivityTextViews"
             android:layout_marginTop="@dimen/recipe_header_spacing"
             android:layout_below="@id/dessert_header"
-            android:text="@string/servings_header"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+            android:text="@string/servings_header" />
 
         <TextView
             android:id="@+id/dessert_servings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/MainActivityTextViews"
             android:layout_marginStart="@dimen/recipe_header_spacing"
             android:layout_toEndOf="@id/dessert_servings_header"
             android:layout_below="@id/dessert_name"
             android:layout_marginTop="@dimen/recipe_header_spacing"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
             tools:text="@string/servings_example" />
 
     </RelativeLayout>
