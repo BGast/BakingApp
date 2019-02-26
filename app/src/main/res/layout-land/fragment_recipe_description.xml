@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0097a7"
     android:orientation="horizontal"
     tools:context=".fragments.RecipeDescriptionFragment">
 
@@ -12,24 +13,18 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/ingredients_intro_content_description"
-            android:text="@string/ingredients_header"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textStyle="italic" />
+        <TextView style="@style/RecipeDescriptionHeader" />
 
-        <TextView
-            android:id="@+id/ingredients_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/ingredients_list_horizontal_margin"
-            android:layout_marginRight="@dimen/ingredients_list_horizontal_margin"
-            android:textAlignment="viewStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            tools:text="@string/ingredients_list_example" />
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/ingredients_list"
+                style="@style/IngredientList"
+                tools:text="@string/ingredients_list_example" />
+
+        </ScrollView>
 
     </LinearLayout>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.RecipeInstructionsFragment">
@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:fastforward_increment="1000"
-            app:rewind_increment="1000"/>
+            app:rewind_increment="1000" />
 
         <TextView
             android:id="@+id/tv_no_video"
@@ -34,12 +34,7 @@
 
     <TextView
         android:id="@+id/recipe_step_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/buttons_step_frame_layout"
-        android:layout_below="@+id/video_holder_frame_layout"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        style="@style/RecipeStepDescription"
         tools:text="@string/recipe_description_example" />
 
     <FrameLayout

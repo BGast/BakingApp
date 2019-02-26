@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="#00BCD4"
     android:layout_marginStart="@dimen/card_view_spacing"
     android:layout_marginTop="@dimen/card_view_spacing"
-    android:layout_marginEnd="@dimen/card_view_spacing">
+    android:layout_marginEnd="@dimen/card_view_spacing"
+    app:cardBackgroundColor="#00BCD4">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -29,17 +29,17 @@
         <TextView
             android:id="@+id/dessert_servings_header"
             style="@style/MainActivityTextViews"
-            android:layout_marginTop="@dimen/recipe_header_spacing"
             android:layout_below="@id/dessert_header"
+            android:layout_marginTop="@dimen/recipe_header_spacing"
             android:text="@string/servings_header" />
 
         <TextView
             android:id="@+id/dessert_servings"
             style="@style/MainActivityTextViews"
-            android:layout_marginStart="@dimen/recipe_header_spacing"
-            android:layout_toEndOf="@id/dessert_servings_header"
             android:layout_below="@id/dessert_name"
+            android:layout_marginStart="@dimen/recipe_header_spacing"
             android:layout_marginTop="@dimen/recipe_header_spacing"
+            android:layout_toEndOf="@id/dessert_servings_header"
             tools:text="@string/servings_example" />
 
     </RelativeLayout>

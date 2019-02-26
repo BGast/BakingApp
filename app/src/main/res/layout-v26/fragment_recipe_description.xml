@@ -3,26 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0097a7"
     android:orientation="vertical"
     tools:context=".fragments.RecipeDescriptionFragment">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/ingredients_intro_content_description"
-        android:text="@string/ingredients_header"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textStyle="italic" />
+    <TextView style="@style/RecipeDescriptionHeader" />
 
     <TextView
         android:id="@+id/ingredients_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/IngredientListV26"
         android:layout_marginHorizontal="@dimen/ingredients_list_horizontal_margin"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         tools:text="@string/ingredients_list_example" />
 
     <android.support.v7.widget.RecyclerView

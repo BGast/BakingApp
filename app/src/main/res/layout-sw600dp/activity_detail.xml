@@ -3,23 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailActivity"
+    android:background="#0097a7"
     android:baselineAligned="false"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    tools:context=".DetailActivity">
 
     <FrameLayout
         android:id="@+id/recipe_detail_fragment_container"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        tools:layout="@layout/fragment_recipe_instructions"/>
+        tools:layout="@layout/fragment_recipe_instructions" />
 
     <FrameLayout
         android:id="@+id/instruction_fragment_container"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
-        tools:layout="@layout/fragment_recipe_instructions"
-        tools:ignore="InconsistentLayout" />
+        tools:ignore="InconsistentLayout"
+        tools:layout="@layout/fragment_recipe_instructions" />
 
 </LinearLayout>
