@@ -2,9 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#09C"
-    android:padding="@dimen/widget_margin"
+    android:background="#0097a7"
     android:orientation="vertical"
+    android:padding="@dimen/widget_margin"
     tools:ignore="Overdraw">
 
     <TextView
@@ -13,12 +13,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="8dp"
-        android:background="#09C"
+        android:background="#0097a7"
         android:contentDescription="@string/recipe_title_in_widget"
-        tools:text="@string/recipe_title_example_widget"
         android:textColor="#ffffff"
         android:textSize="16sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic"
+        tools:text="@string/recipe_title_example_widget" />
 
     <TextView
         android:id="@+id/widget_recipe_ingredients"
@@ -26,11 +26,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="8dp"
-        android:background="#09C"
+        android:background="#0097a7"
         android:contentDescription="@string/recipe_ingredients_in_widget"
         android:text="@string/widget_ingredients_default_text"
-        tools:text="@string/ingredients_list_example"
         android:textColor="#ffffff"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        tools:text="@string/ingredients_list_example" />
 
 </LinearLayout>
