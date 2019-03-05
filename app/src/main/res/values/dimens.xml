@@ -9,5 +9,5 @@
 
     <dimen name="widget_margin">0dp</dimen>
     <dimen name="video_tablet_land">500dp</dimen>
-    <dimen name="video_size_standard">250dp</dimen>
+    <dimen name="video_size_standard">500dp</dimen>
 </resources>
