@@ -9,7 +9,7 @@
     <FrameLayout
         android:id="@+id/video_holder_frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/video_tablet_land"
+        android:layout_height="@dimen/video_tablet"
         android:layout_alignParentTop="true">
 
         <com.google.android.exoplayer2.ui.PlayerView
